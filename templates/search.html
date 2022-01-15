@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+    <input type="search" placeholder="search products by its names" name = 'search'>
+    <input type="submit" name ='submit'>
+    </form>
+    <table style="width: 90%;" class="table table-hover table-dark">
+        <thead>
+            <tr style="background-color: bisque;">
+                <th scope='col'>სახელი</th>
+                <th scope='col'>ფასი</th>
+                <th scope='col'>ვადა</th>
+                <th scope='col'>ჰეშ</th>
+                <th scope="col">ყიდვა</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr style="background-color: rgb(189, 189, 192);">
+                <td>
+                    <center>
+                  {{item.name}}
+                  </center>
+                </td>
+                <td style="display: inline;">
+                    <center>
+                    {{item.username}}
+                    </center>
+                </td>
+                <td>
+                    <center>
+                   {{item.age}}
+                   </center>
+                </td>
+                <td>
+                    <center>
+                   {{item.password}}
+                    </center>
+                </td>
+                <td>
+                    <button style=" color: aliceblue; background-color: rgb(5, 146, 5);" >შეძენა</button>
+                </td>
+               
+            </tr>
+            {% endfor %}
+
+
+            {% if erorr %}
+            <tr style="background-color: rgb(189, 189, 192);">
+                <td>
+                    <center>
+                    {{erorr}} არ მოიძებნა
+                  </center>
+                </td>
+                <td style="display: inline;">
+                    <center>
+                        {{erorr}} არ მოიძებნა
+                    </center>
+                </td>
+                <td>
+                    <center>
+                        {{erorr}} არ მოიძებნა
+                   </center>
+                </td>
+                <td>
+                    <center>
+                        {{erorr}} არ მოიძებნა
+                    </center>
+                </td>
+               
+            </tr>
+            {% endif %}
+            
+        </tbody>
+    </table>
+</body>
+</html>

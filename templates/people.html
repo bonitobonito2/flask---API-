@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>პროდუქტები</title>
+</head>
+<body>
+    <center>
+    <h1>მაღაზიაში არსებული ყველა პროდუქტი</h1>
+    <table style="width: 90%;" class="table table-hover table-dark">
+        <thead>
+            <tr style="background-color: bisque;">
+                <th scope='col'>სახელი</th>
+                <th scope='col'>ფასი</th>
+                <th scope='col'>ვადა</th>
+                <th scope='col'>ჰეშთეგი</th>
+                <th scope="col">პროდუქტის წაშლა</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr style="background-color: rgb(189, 189, 192);">
+                <td>
+                    <center>
+                  {{item.name}}
+                  </center>
+                </td>
+                <td style="display: inline;">
+                    <center>
+                    {{item.username}}
+                    </center>
+                </td>
+                <td>
+                    <center>
+                   {{item.age}}
+                   </center>
+                </td>
+                <td>
+                    <center>
+                   {{item.password}}
+                    </center>
+                </td>
+                <td>
+                  <form action="#" method="post">
+                    <input type="submit" value ='{{item.name}}' name = 'delete'>
+                  </form>
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </center>
+</body>
+</html>
